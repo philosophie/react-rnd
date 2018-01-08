@@ -294,6 +294,7 @@ export default class Rnd extends React.Component<Props, State> {
     refToElement: React.ElementRef<'div'>,
   ) {
     e.stopPropagation();
+    e.preventDefault();
     this.setState({
       disableDragging: true,
       original: { x: this.draggable.state.x, y: this.draggable.state.y },
@@ -360,6 +361,7 @@ export default class Rnd extends React.Component<Props, State> {
     refToResizableElement: React.ElementRef<'div'>,
     delta: { height: number, width: number },
   ) {
+    e.preventDefault();
     let x;
     let y;
     if (/left/i.test(direction)) {
